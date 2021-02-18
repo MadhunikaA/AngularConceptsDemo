@@ -1,0 +1,9 @@
+
+.dropdown{
+  float: right;
+}
+.navbar{
+  background-color: #fc7899 !important;
+  position: fixed;
+  width: 100%;
+}

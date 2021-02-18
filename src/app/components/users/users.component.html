@@ -1,0 +1,47 @@
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link " [class.active]="viewMode=='flowers'" (click)="viewMode='flowers'">flowers</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [class.active]="viewMode=='fruits'" (click)="viewMode='fruits'">fruits</a>
+    </li>
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'flowers'">
+        <ul>
+            <li>rose</li>
+            <li>jasmine</li>
+        </ul>
+    </div>
+    <div *ngSwitchCase="'fruits'">
+        <ul>
+            <li>
+                apple
+            </li>
+            <li>
+                banana
+            </li>
+        </ul>
+    </div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>
+<hr>
+<div>
+    <button [ngClass]="{'btn': isButton, 'btn-primary': isPrimary}">Button</button>
+</div>
+<br>
+<div>
+    <input type="checkbox" (click)="toggleButton()"> Toggle Button Class
+</div>
+<br>
+<div>
+    <button [ngStyle]="{'color': canSubmit ? 'white' : 'black','backgroundColor': canSubmit ? '#9b59b6' : 'white'}">
+        Submit
+    </button>
+</div>
+<hr>
+<h5 class="high-light">Hello Host binding</h5>
+
+<hr>
+<h5>Agree: {{agreed}}, Disagree: {{disagreed}}</h5>
+<app-child *ngFor="let voter of voters" [name]="voter" (onVoted)="onVoted($event)"></app-child>
