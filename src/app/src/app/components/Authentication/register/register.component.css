@@ -1,0 +1,17 @@
+.btn{
+    background-color: #fc7899 !important;
+    border: none;
+}
+.btn:hover{
+    background-color: #d12e56 !important;
+    border: none;
+}
+.card{
+    background-color: #fc7899;
+}
+ input[type=checkbox]:checked  {
+    color: #fc7899;
+  } 
+.invalid-feedback{
+      color: darkred;
+  }
